@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Libre+Barcode+39&family=Macondo&family=Nothing+You+Could+Do&family=Press+Start+2P&family=Wallpoet&display=swap');
+
+/*
+
+font-family: 'Fredericka the Great', cursive;
+
+font-family: 'Libre Barcode 39', cursive;
+
+font-family: 'Macondo', cursive;
+
+font-family: 'Nothing You Could Do', cursive;
+
+font-family: 'Press Start 2P', cursive;
+
+font-family: 'Wallpoet', cursive;
+
+*/
+
+nav{
+    background-color: rgba(0,0,0,0.472);
+    display: flex;
+    justify-content: space-between;
+    color: whitesmoke;
+    ul{
+        list-style: none;
+        display: flex;
+        li{
+            margin-inline: 20px;
+            font-family: 'Nothing You Could Do', cursive;
+            transition: 1s;
+            &:hover{
+                text-decoration: underline;
+                color: greenyellow;
+                cursor: pointer;
+            }
+        }
+    }
+    h3{
+        font-family: 'Fredericka the Great', cursive;
+        letter-spacing: 2px;
+    }
+}

@@ -1,0 +1,48 @@
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .card{
+        margin:15px;
+        width: 450px;
+        height: 300px;
+        border-radius: 20px;
+        color: whitesmoke;
+        display: flex;
+        background: linear-gradient(to right, #bbd2c5, #536976);
+        transition: 0.8s;
+        position: relative;
+        .delete{
+            position: absolute;
+            z-index: 1;
+            height: 300px;
+            width: 25px;
+            border-radius: 20px 0 0 20px;
+            border: none;
+            opacity: 0;
+            color: whitesmoke;
+            font-size: 30px;
+            font-weight: bolder;
+            transition: 0.8s;
+            &:hover{
+                opacity: 0.6;
+                background-color: rgba(255, 0, 0, 0.8);
+                width: 200px;
+                cursor: pointer;
+            }
+        }
+        &:hover{
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
+            transform: scale(1.02);
+        }
+        img{
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px 0 0 20px;
+        }
+        .card-body{
+            margin-left: 10px;
+        }
+    }
+}
