@@ -1,16 +1,19 @@
 import React from 'react'
 import '../scss/navi.scss'
 
-const Navi = () => {
+const Navi = ({kategori,setSecilenKategori}) => {
   return (
     <nav>
       <h3>Bilge Adam Kitaplık</h3>
       <ul>
-        <li>Software</li>
-        <li>Macera</li>
-        <li>Romantik</li>
-        <li>Edebiyat</li>
-        <li>Bilim-Kurgu</li>
+        {
+          kategori.map((item)=>
+            <li key={item.kategoriId}>
+              <span onClick={()=>setSecilenKategori(item.kategoriId)}>{item.kategoriAdi}</span>
+            </li>
+
+          )
+        }
       </ul>
     </nav>
   )

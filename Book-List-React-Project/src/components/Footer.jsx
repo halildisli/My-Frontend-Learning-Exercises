@@ -1,9 +1,18 @@
 import React from 'react'
 import '../scss/footer.scss'
 
-const Footer = () => {
+const Footer = ({data}) => {
   return (
-    <div>Footer Componenti</div>
+    <footer>
+      {
+        data.map((item)=>
+        <>
+          <a href="#">{item.kitapAdi}</a>
+          <span >📚</span>
+        </>
+        )
+      }
+    </footer>
   )
 }
 

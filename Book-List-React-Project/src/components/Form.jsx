@@ -3,7 +3,7 @@ import '../scss/form.scss'
 
 const Form = ({yeniKitap}) => {
   // const[deger,setDeger]=useState(initialValue)
-  const [kategori,setKategori]=useState("Software");
+  const [kategori,setKategori]=useState(1);
   const [kitapIsmi,setKitapIsmi]=useState("");
   const [kitapYazar,setKitapYazar]=useState("");
   const [kitapAciklama,setKitapAciklama]=useState("");
@@ -14,7 +14,7 @@ const Form = ({yeniKitap}) => {
     e.preventDefault();
     yeniKitap(
       {
-      id: Math.round(Math.random()*100),
+      // id: Math.round(Math.random()*100), // Json Server Otomatik sırasına göre id atar.
       kitapAdi:kitapIsmi,
       kitapYazari: kitapYazar,
       kitapKategori:kategori,
@@ -23,7 +23,7 @@ const Form = ({yeniKitap}) => {
       kitapSayfa: kitapSayfa,
       }
     )
-    setKategori("Software");
+    setKategori(1);
     setKitapAciklama("");
     setKitapIsmi("");
     setKitapSayfa("");
@@ -35,11 +35,11 @@ const Form = ({yeniKitap}) => {
     <form onSubmit={handleSubmit}>
       <h3>Yeni Kitap Ekle / Düzenle</h3>
       <select value={kategori} onChange={(e)=>{setKategori(e.target.value)}} >
-        <option>Software</option>
-        <option>Macera</option>
-        <option>Romantik</option>
-        <option>Edebiyat</option>
-        <option>Bilim</option>
+        <option value={1}>Software</option>
+        <option value={2}>Macera</option>
+        <option value={3}>Romantik</option>
+        <option value={4}>Edebiyat</option>
+        <option value={5}>Bilim</option>
       </select>
       <input value={kitapIsmi} onChange={(e)=>{setKitapIsmi(e.target.value)}} type='text' placeholder='kitap ismi'></input>
       <input value={kitapYazar} onChange={(e)=>{setKitapYazar(e.target.value)}} type='text' placeholder='kitap yazarı'></input>
