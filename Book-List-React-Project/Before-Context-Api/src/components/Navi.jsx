@@ -1,9 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import '../scss/navi.scss'
-import DataContext from '../context/dataContext'
 
-const Navi = () => {
-  const {kategori,setSecilenKategori}=useContext(DataContext)
+const Navi = ({kategori,setSecilenKategori}) => {
   return (
     <nav>
       <h3>Bilge Adam Kitaplık</h3>

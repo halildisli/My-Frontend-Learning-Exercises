@@ -1,23 +1,40 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import '../scss/form.scss'
-import DataContext from '../context/dataContext'
 
-const Form = () => {
+const Form = ({yeniKitap}) => {
+  // const[deger,setDeger]=useState(initialValue)
+  const [kategori,setKategori]=useState(1);
+  const [kitapIsmi,setKitapIsmi]=useState("");
+  const [kitapYazar,setKitapYazar]=useState("");
+  const [kitapAciklama,setKitapAciklama]=useState("");
+  const [kitapResim,setKitapResim]=useState("");
+  const [kitapSayfa,setKitapSayfa]=useState("");
 
-  const {
-    handleSubmit,
-    kategoriF,setKategoriF,
-    kitapIsmi,setKitapIsmi,
-    kitapYazar,setKitapYazar,
-    kitapAciklama,setKitapAciklama,
-    kitapResim,setKitapResim,
-    kitapSayfa,setKitapSayfa
-  }=useContext(DataContext);
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    yeniKitap(
+      {
+      // id: Math.round(Math.random()*100), // Json Server Otomatik sırasına göre id atar.
+      kitapAdi:kitapIsmi,
+      kitapYazari: kitapYazar,
+      kitapKategoriId:kategori,
+      kitapResmi:kitapResim,
+      kitapAciklama: kitapAciklama,
+      kitapSayfa: kitapSayfa,
+      }
+    )
+    setKategori(1);
+    setKitapAciklama("");
+    setKitapIsmi("");
+    setKitapSayfa("");
+    setKitapYazar("");
+    setKitapResim("");
+  }
 
   return (
     <form onSubmit={handleSubmit}>
       <h3>Yeni Kitap Ekle / Düzenle</h3>
-      <select value={kategoriF} onChange={(e)=>{setKategoriF(e.target.value)}} >
+      <select value={kategori} onChange={(e)=>{setKategori(e.target.value)}} >
         <option value={1}>Software</option>
         <option value={2}>Macera</option>
         <option value={3}>Romantik</option>

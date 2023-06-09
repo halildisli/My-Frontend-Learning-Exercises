@@ -1,16 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import '../scss/card.scss'
-import DataContext from '../context/dataContext'
-
-const Card = () => {
-  const {kitap,kitapSil}=useContext(DataContext);
 
 
+const Card = ({data,kitapSil}) => {
   return (
     <div className='card-container'>
       {
-        kitap.map((kitap)=>
-          kitap.isDeleted!="true"&&
+        data.map((kitap)=>{
+          return(
         <div className="card" key={kitap.id}>
           <button onClick={()=>kitapSil(kitap.id)}
           className='delete' title='Kaldır'>X</button>
@@ -26,7 +23,7 @@ const Card = () => {
 
           </div>
         </div>
-        )
+        )})
       }
         
     </div>

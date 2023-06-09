@@ -1,13 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import '../scss/footer.scss'
-import DataContext from '../context/dataContext'
 
-const Footer = () => {
-  const{kitap}=useContext(DataContext)
+const Footer = ({data}) => {
   return (
     <footer>
       {
-        kitap.map((item)=>
+        data.map((item)=>
         <>
           <a href="#">{item.kitapAdi}</a>
           <span >📚</span>
