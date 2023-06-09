@@ -2,21 +2,18 @@ import Card from './components/Card';
 import Form from './components/Form';
 import Header from './components/Header';
 import './scss/app.scss'
-import {data} from './data/data'
-import { useState } from 'react';
+
+import { DataProvider } from './context/dataContext';
 
 function App() {
-  const[course,setCourse]=useState(data);
-  const newCourse=(newC)=>{
-    // setCourse([...data,newC]);
-    setCourse(prev=>[...prev,newC]);
-  }
+  
+
   return (
-    <div className='container'>
+    <DataProvider>
       <Header/>
-      <Form newCourse={newCourse}/>
-      <Card data={course}/>
-    </div>
+      <Form/>
+      <Card/>
+    </DataProvider>
   );
 }
 
