@@ -1,0 +1,14 @@
+:root{
+    --primary-background-color:#789194;
+    --primary-font-color:#0E3646;
+    --primary-light-background:#b9b9a5;
+}
+.button-cast{
+    width: 200px;
+    height: 30px;
+    background-color: #0E3646;
+    border-radius: 20px;
+    border: none;
+    color: var(--primary-light-background);
+    margin-top: 20px;
+}

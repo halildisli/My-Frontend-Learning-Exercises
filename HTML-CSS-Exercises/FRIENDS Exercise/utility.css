@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    --primary-light:#F9DBBB;
+    --primary-dark:#2E3840;
+    --primary-red:#FF0303;
+    --primary-light-accent:#4E6E81;
+}
+
+.btn-light{
+    width: 200px;
+    background-color: aquamarine;
+    color: var(--primary-dark);
+}
